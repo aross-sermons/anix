@@ -1,0 +1,66 @@
+// config.jsonc
+{
+    "layer": "top",
+    "position": "top",
+    "height": "25",
+    "modules-left": ["custom/user", "custom/uptime", "hyprland/workspaces"],
+    "modules-center": ["custom/clock"],
+    "modules-right": ["cpu", "memory", "network", "battery"],
+    "margin": 0,
+    "spacing": 0,
+    "mode": "dock",
+    "start_hidden": false,
+    "exclusive": false,
+    "fixed-center": true,
+    "passthrough": false,
+    "custom/user": {
+        "interval": 600,
+        "exec": "echo 󰜗 $USER",
+        "format": "{}"
+    },
+    "custom/uptime": {
+        "interval": 60,
+        "exec": "echo 󰜷 $(uptime | awk '{gsub(/,$/, \"\", $3); print $3}')",
+        "format": "{}"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}% "
+    },
+    "memory": {
+        "interval": 10,
+        "format": "{percentage}% ",
+        "tooltip": true,
+        "tooltip-format": "Main: {used}/{total}\nSwap: {swapUsed}/{swapTotal}"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3"
+        }
+    },
+    "custom/clock": {
+        "interval": 60,
+        "exec": "date '+%I:%M %P'",
+        "format": "{}"
+    },
+    "network": {
+        "interval": 10,
+        "format-wifi": "{signalStrength:3}% 󰖩",
+        "format-disconnected": "󱚼",
+        "tooltip": true,
+        "tooltip-format": "{essid} {signalStrength}%"
+    },
+    "battery": {
+        "states": {
+            "warning": 25,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true,
+        "tooltip-format": "Battery: {capacity}%\n{time}"
+    }
+}

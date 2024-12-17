@@ -1,0 +1,42 @@
+
+window#waybar {
+    background: #17301c;
+    color: #e3ffe6;
+    border-bottom: 3px solid #689471;
+}
+
+#custom-user {
+    border-bottom: 3px solid #f5ca98
+}
+
+#custom-uptime {
+    border-bottom: 3px solid #ffc4ca;
+}
+
+#workspaces {
+    border-bottom: 3px solid #4f88a1;
+}
+
+#workspaces button.active {
+    border-bottom: 3px solid #6e963d;
+}
+
+#clock {
+    border-bottom: 3px solid #6e963d;
+}
+
+#cpu {
+    border-bottom: 3px solid #000000;
+}
+
+#memory {
+    border-bottom: 3px solid #000000;
+}
+
+#network {
+    border-bottom: 3px solid #000000;
+}
+
+#battery {
+    border-bottom: 3px solid #000000;
+}
