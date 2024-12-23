@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
     ./packages.nix
     ./env-vars.nix
+    ./programs.nix
     ./services.nix
     ./users.nix
   ];

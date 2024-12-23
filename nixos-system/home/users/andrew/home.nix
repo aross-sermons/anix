@@ -32,13 +32,7 @@
     # Desktop Environment Packages
     # ------------------------------------------------------------------------------- #
 
-    packages = with pkgs; [
-      hyprland                           # Dynamic Tiling Window Compositor (daemon, bins, lib)
-      hyprpaper                          # Hyprland Wallpaper Manager (daemon, bin/hyprpaper)
-      waybar                             # Status Bar for Wayland (lib, bin/waybar)
-      wofi                               # Application Launcher (bin/wofi)
-      alacritty                          # GPU-Accelerated Terminal Emulator (bin/alacritty)
-    ];
+    packages = with pkgs; [ ];
 
     # === === === === === === === === === === === === === === === === === === === === #
   };

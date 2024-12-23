@@ -16,7 +16,7 @@
 
     # Home Options
     username = "okinawa";
-    homeDirectory = "/home/andrew";
+    homeDirectory = "/home/okinawa";
 
     # Imports
     imports = [
@@ -49,16 +49,18 @@
     # Dotfile Paths
     # ------------------------------------------------------------------------------- #
 
-    home.file = {
+    file = {
       # hyprland sources
-
-      # hyprpaper sources
+      ".config/hypr" = {
+        source = ./dotfiles/hypr;
+        recursive = true;
+      };
 
       # waybar sources
-
-      # wofi sources
-
-      # alacritty sources
+      ".config/waybar" = {
+        source = ./dotfiles/waybar;
+        recursive = true;
+      };
     };
 
     # === === === === === === === === === === === === === === === === === === === === #
