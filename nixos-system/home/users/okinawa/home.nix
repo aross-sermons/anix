@@ -2,8 +2,13 @@
 
 # The home.nix configuration file for okinawa
 
-{ config, ... }:
+{ config, pkgs, ... }:
 {
+  # Imports
+  imports = [
+    (import ../../default.nix)
+  ];
+
   home = {
     # === === === === === === === === === === === === === === === === === === === === #
     #
@@ -17,11 +22,6 @@
     # Home Options
     username = "okinawa";
     homeDirectory = "/home/okinawa";
-
-    # Imports
-    imports = [
-      ../../default.nix
-    ];
 
     # === === === === === === === === === === === === === === === === === === === === #
     #

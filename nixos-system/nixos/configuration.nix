@@ -1,6 +1,6 @@
 # nixos/configuration.nix
 
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   # === === === === === === === === === === === === === === === === === === === === #
   #
@@ -47,7 +47,7 @@
 
   # Hardware Options
   hardware = {
-    firmware = [ pkgs.linuxFirmware ];
+    firmware = [ pkgs.linux-firmware ];
     graphics.enable = true;
     graphics.enable32Bit = true;
     cpu.intel.updateMicrocode = true;
@@ -59,9 +59,15 @@
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  location.latitude = 40.7128;  # Example: Latitude of New York City
+  location.longitude = -74.0060; # Example: Longitude of New York City
+
   # Network Management
   networking = {
     hostName = "anix";
     networkmanager.enable = true;
   };
+
+  # Enable Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

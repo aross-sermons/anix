@@ -1,24 +1,18 @@
 # nixos/users.nix
 
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   # === === === === === === === === === === === === === === === === === === === === #
   #
-  # ░█░█░█▀█░█▄█░█▀▀░░░█▄█░█▀█░█▀█░█▀█░█▀▀░█▀▀░█▀▄
-  # ░█▀█░█░█░█░█░█▀▀░░░█░█░█▀█░█░█░█▀█░█░█░█▀▀░█▀▄
-  # ░▀░▀░▀▀▀░▀░▀░▀▀▀░░░▀░▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀░▀
+  # ░█▀▀░█▀▄░█▀█░█░█░█▀█░█▀▀
+  # ░█░█░█▀▄░█░█░█░█░█▀▀░▀▀█
+  # ░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░░░▀▀▀
   #
-  # Home Manager Configuration and Imports
+  # Group Definitions
   # ------------------------------------------------------------------------------- #
 
-  # Enable Home Manager
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPkgs = true;
-
-  # Import User's home.nix Files
-  home-manager.users = {
-    andrew = import ../home/users/andrew/home.nix;
-    okinawa = import ../home/users/okinawa/home.nix;
+  users.groups = {
+    andrew = { };
   };
 
   # === === === === === === === === === === === === === === === === === === === === #

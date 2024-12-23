@@ -14,31 +14,47 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
-  in {
-    nixosConfigurations.anix = nixpkgs.lib.nixsosSystem {
+    pkgs = import nixpkgs {
       inherit system;
-      
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
+      config = {
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-27.3.11"
+        ];
       };
+    };
+  in {
+    nixosConfigurations.anix = nixpkgs.lib.nixosSystem {
+      inherit system;
+      inherit pkgs;
 
       modules = [
         ./nixos/configuration.nix
 
-        (import home-manager { inherit system pkgs; }).nixosModules.home-manager {
+        home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
-            useUserPkgs = true;
+            useUserPackages = true;
             users = {
               andrew = import ./home/users/andrew/home.nix;
               okinawa = import ./home/users/okinawa/home.nix;
             };
           };
         }
+
+#        (import home-manager { inherit system pkgs; }).nixosModules.home-manager {
+#          home-manager = {
+#            useGlobalPkgs = true;
+#            useUserPkgs = true;
+#            users = {
+#              andrew = import ./home/users/andrew/home.nix;
+#              okinawa = import ./home/users/okinawa/home.nix;
+#            };
+#          };
+#        }
       ];
     };
   };

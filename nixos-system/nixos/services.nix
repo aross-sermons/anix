@@ -1,6 +1,6 @@
 # nixos/services.nix
 
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   # === === === === === === === === === === === === === === === === === === === === #
   #
@@ -73,25 +73,25 @@
       enable = false; # Enable if touchpad bad
       dev = null; # "/path/to/device" or null for autodetect
     };
-  };
 
-  # greetd
-  greetd = {
-    enable = true;
-    restart = false;
-    package = pkgs.greetd.regreet;
-    settings = {
-      default_session = {
-        command = "regreet --tty --exec 'Hyprland'";
-        user = "okinawa";
-      };
-      session.regreet_tty = {
-        command = "regreet --tty";
-        user = "andrew";
-      };
-      session.regreet = {
-        command = "regreet --tty";
-        user = "greeter";
+    # greetd
+    greetd = {
+      enable = true;
+      restart = false;
+      package = pkgs.greetd.regreet;
+      settings = {
+        default_session = {
+          command = "regreet --tty --exec 'Hyprland'";
+          user = "okinawa";
+        };
+        session.regreet_tty = {
+          command = "regreet --tty";
+          user = "andrew";
+        };
+        session.regreet = {
+          command = "regreet --tty";
+          user = "greeter";
+        };
       };
     };
   };

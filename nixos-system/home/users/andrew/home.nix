@@ -2,8 +2,13 @@
 
 # The home.nix configuration file for andrew
 
-{ config, ... }:
+{ config, pkgs, ... }:
 {
+  # Imports
+  imports = [
+    (import ../../default.nix)
+  ];
+
   home = {
     # === === === === === === === === === === === === === === === === === === === === #
     #
@@ -17,11 +22,6 @@
     # Home Options
     username = "andrew";
     homeDirectory = "/home/andrew";
-
-    # Imports
-    imports = [
-      ../../default.nix
-    ];
 
     # === === === === === === === === === === === === === === === === === === === === #
     #

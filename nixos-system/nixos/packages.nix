@@ -2,10 +2,10 @@
 
 # Full package list for nixos/system packages
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # === === === === === === === === === === === === === === === === === === === === #
     #
     # ░█░█░█▀█░█▀▄░█▀▄░█░█░█▀█░█▀▄░█▀▀░░░█▀▀░█▀▀░█▀▀░█▀▀░█▀█░▀█▀░▀█▀░█▀█░█░░░█▀▀
@@ -46,7 +46,6 @@
     libGL                                # OpenGL Runtime Library (libs)
     libGLU                               # High Level OpenGL Library (libs)
     libva                                # VA-API Video Acceleration (libs)
-    xorg.xf86videointel                  # X11 Intel GPU Driver (driver)
 
     # Screen Color and Brightness
     brightnessctl                        # Adjust Screen Brightness (bin/brightnessctl)
@@ -76,7 +75,7 @@
     xorg.xf86inputlibinput               # Modern Input Driver (driver)
     xorg.xf86inputsynaptics              # Legacy Synaptics Touchpad Driver (driver)
       # May work better for Dell XPS 13
-    xinput                               # Input Device Debugging Tool (bin/xinput)
+    xorg.xinput                               # Input Device Debugging Tool (bin/xinput)
 
     # === === === === === === === === === === === === === === === === === === === === #
     #
@@ -117,7 +116,7 @@
 
     # File Management
     fd                                   # Fast find Alternative (bin/fd)
-    exa                                  # Modern ls Replacement (bin/exa)
+    eza                                  # Modern ls Replacement (bin/eza)
     duf                                  # Disk Usage Viewer (bin/duf)
     zip                                  # Zip File Creator (bins)
       # (bin/zipsplit, bin/zip, bin/zipcloak, bin/zipnote)
@@ -134,7 +133,7 @@
     nano                                 # Simple Text Editor (bin/nano)
     neovim                               # Feature-Rich Text Editor (bin/nvim)
     bat                                  # Enhanced cat (bin/bat)
-    awk                                  # Pattern Processing Language (bin/awk)
+    gawk                                 # Pattern Processing Language (bin/awk)
     fzf                                  # Fuzzy Search (bin/fzf)
     ripgrep                              # Fast grep Alternative (bin/rg)
     jp                                   # JSON Processor (bin/jq)
@@ -174,23 +173,21 @@
 
     # X11 Compatibility
     xwayland                             # X11 Server (daemon)
-    (with xorg; [
-      xrandr                             # Live X Server Reconfiguration (bin/xrandr)
-      xset                               # Set Display Preferences (bin/xset)
-      libX11                             # X11 Client-Side Library (lib)
-      libxcb                             # Modern libX11 Replacement (lib)
-      libXcursor                         # X11 Cursor Management (lib)
-      libXinerama                        # Multi-Monitor Support (lib)
-      libXrandr                          # Screen Resolution Handling (lib)
-      libXcomposite                      # X11 Compositing (lib)
-      libXdamage                         # Tracks Damaged X11 Window Areas (lib)
-      libXtst                            # X11 Test Extensions (lib)
-      libXi                              # X11 Input Extensions (lib)
-      xsetroot                           # Sets Root Window Properties (bin/xsetroot)
-      xprop                              # Displays Window Properties (bin/xprop)
-      xev                                # X11 Event Viewer (bin/xev)
-      xkill                              # Kills X11 Apps (bin/xkill)
-    ])
+    xorg.xrandr                          # Live X Server Reconfiguration (bin/xrandr)
+    xorg.xset                            # Set Display Preferences (bin/xset)
+    xorg.libX11                          # X11 Client-Side Library (lib)
+    xorg.libxcb                          # Modern libX11 Replacement (lib)
+    xorg.libXcursor                      # X11 Cursor Management (lib)
+    xorg.libXinerama                     # Multi-Monitor Support (lib)
+    xorg.libXrandr                       # Screen Resolution Handling (lib)
+    xorg.libXcomposite                   # X11 Compositing (lib)
+    xorg.libXdamage                      # Tracks Damaged X11 Window Areas (lib)
+    xorg.libXtst                         # X11 Test Extensions (lib)
+    xorg.libXi                           # X11 Input Extensions (lib)
+    xorg.xsetroot                        # Sets Root Window Properties (bin/xsetroot)
+    xorg.xprop                           # Displays Window Properties (bin/xprop)
+    xorg.xev                             # X11 Event Viewer (bin/xev)
+    xorg.xkill                           # Kills X11 Apps (bin/xkill)
 
     # XDG Features
     xdg-utils                            # XDG CLI Tools (bins)
@@ -264,7 +261,7 @@
     bitwarden-desktop                      # Password Manager
     bitwarden-cli                          # Password Manager
     gimp                                   # GIMP Image Editor
-    viewnoir                               # Light Image Viewer
+    viewnior                               # Light Image Viewer
     vlc                                    # Media Player
     umlet                                  # UML Diagram Designer
   ];
