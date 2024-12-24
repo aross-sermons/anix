@@ -5,6 +5,12 @@
 let
   aliases = {
     ll = "ls -l";
+    la = "ls -a";
+    lt = "ls --tree";
+    ".." = "cd ..";
+    rmd = "rm -rd";
+    mkd = "mkdir";
+    mkp = "mkdir -p";
   };
 in {
   programs = {
@@ -20,6 +26,13 @@ in {
       enable = true;
       shellAliases = aliases;
       enableCompletion = true;
+    };
+
+    git = {
+      enable = true;
+      userName = "Andrew Ross-Sermons";
+      userEmail = "aross-sermons@proton.me";
+      config.init.defaultBranch = "main";
     };
   };
 }

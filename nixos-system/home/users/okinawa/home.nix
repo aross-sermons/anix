@@ -40,6 +40,30 @@
       alacritty                          # GPU-Accelerated Terminal Emulator (bin/alacritty)
     ];
 
+
+    # Session Variables
+    sessionVariables = {
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+      XDG_SESSION_DESKTOP = "Hyprland";
+
+      XDG_RUNTIME_DIR = "/run/user/$UID";
+
+      WAYLAND_DISPLAY = "wayland-1";
+      QT_QPA_PLATFORM = "wayland;xcb";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+
+      GDK_BACKEND = "wayland,x11";
+      SDL_VIDEODRIVER = "wayland";
+      CLUTTER_BACKEND = "wayland";
+
+      GDK_SCALE = "1";
+
+      MOZ_ENABLE_WAYLAND = "1";
+      MOZ_WEBRENDER = "1";
+    };
+
     # === === === === === === === === === === === === === === === === === === === === #
     #
     # ░█▀▀░█▀█░█░█░█▀▄░█▀▀░█▀▀░█▀▀

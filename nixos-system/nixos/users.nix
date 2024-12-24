@@ -53,6 +53,6 @@
     home = "/home/okinawa";
     extraGroups = [ "wheel" "andrew" "mysql" "networkmanager" ];
     description = "TUI Style Desktop User";
-    createHome = false;
+    createHome = true;
   };
 }

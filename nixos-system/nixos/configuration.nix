@@ -66,6 +66,7 @@
   networking = {
     hostName = "anix";
     networkmanager.enable = true;
+    wireless.enable = false;
   };
 
   # Enable Flakes

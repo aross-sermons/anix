@@ -81,15 +81,7 @@
       package = pkgs.greetd.regreet;
       settings = {
         default_session = {
-          command = "regreet --tty --exec 'Hyprland'";
-          user = "okinawa";
-        };
-        session.regreet_tty = {
-          command = "regreet --tty";
-          user = "andrew";
-        };
-        session.regreet = {
-          command = "regreet --tty";
+          command = "regreet";
           user = "greeter";
         };
       };
