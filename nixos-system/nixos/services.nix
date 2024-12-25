@@ -74,6 +74,9 @@
       dev = null; # "/path/to/device" or null for autodetect
     };
 
+    # fontconfig
+    services.fontconfig.enable = true;
+
     # greetd
     greetd = {
       enable = true;

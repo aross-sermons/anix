@@ -5,8 +5,6 @@ Repository storing a NixOS configuration.
 - [ ] Fix Chrome Blur
 - [ ] Fix Logseq Blur
 - [ ] Fix Regreet
-- [ ] Add VSCodium Package
-- [ ] Connect GitHub Account
 - [ ] Change Git default branch to Main
 - [ ] Fill Out Readme
 - [ ] Fix Hyprland Warning (Invalid keyboard layout passed)
@@ -16,4 +14,10 @@ Repository storing a NixOS configuration.
 - [ ] Hyprland Sound and Brightness Keybinds
 
 ## DONE
+- [x] Install Fonts and Icon Packs
+- [x] Fix Hyprland Warning (Invalid keyboard layout passed)
+- [x] Change Default Terminal User
+- [x] Connect GitHub Account
+- [x] Add VSCodium Package
+- [x] Add Obsidian Package
 - [x] Install NixOS

@@ -12,10 +12,16 @@ let
     mkd = "mkdir";
     mkp = "mkdir -p";
   };
+  zshInit = ''
+      if [ "$(whoami)" != "andrew" ] && [ "$(whoami)" != "root" ]
+        exce su - andrew
+      fi
+  '';
 in {
   programs = {
     bash = {
       shellAliases = aliases;
+      shellInit = zshInit;
       completion = {
         enable = true;
         package = pkgs.bash-completion;
@@ -25,13 +31,12 @@ in {
     zsh = {
       enable = true;
       shellAliases = aliases;
+      shellInit = zshInit;
       enableCompletion = true;
     };
 
     git = {
       enable = true;
-      userName = "Andrew Ross-Sermons";
-      userEmail = "aross-sermons@proton.me";
       config.init.defaultBranch = "main";
     };
   };

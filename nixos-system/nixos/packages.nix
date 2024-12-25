@@ -200,6 +200,9 @@
       # (bin/agreety, bin/fakegreet, bin/greetd)
     greetd.regreet                       # Clean Greeter (bin/regreet)
 
+    fontconfig                           # Utility for managing fonts (bins)
+      # (bin/fc-list, bin/fc-cat)
+
     # Default Desktop
     hyprland                             # Dynamic Tiling Window Compositor (daemon, bins, lib)
     foot                                 # Wayland-native Terminal Emulator
@@ -248,11 +251,12 @@
     # Application Packages for Productivity and Development
     # ------------------------------------------------------------------------------- #
 
-    # Browsers
+    vscodium                               # VSCode
     firefox                                # Firefox Web Browser
-    tor-browser                             # Anonymous Browser (bin/tor-browser)
+    tor-browser                            # Anonymous Browser (bin/tor-browser)
     chromium                               # Open Source Google Browser
     logseq                                 # Markdown Note Manager
+    obsidian                               # Markdown Note Manager
     spotify                                # Spotify
     libreoffice                            # Office Suite
     kdePackages.okular                     # Document Viewer
